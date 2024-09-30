@@ -1,7 +1,7 @@
 # Vacancy Parser API
 
-![Kotlin](https://img.shields.io/badge/Kotlin-1.5.31-blue.svg?logo=kotlin&logoColor=white)
-![Ktor](https://img.shields.io/badge/Ktor-2.0.0-green.svg?logo=ktor&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-2.0.20-blue.svg?logo=kotlin&logoColor=white)
+![Ktor](https://img.shields.io/badge/Ktor-2.3.12-green.svg?logo=ktor&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg?logo=docker&logoColor=white)
 
 A simple **Kotlin-based API** built with **Ktor** that scrapes job vacancies from `Dou.ua` and serves them as an HTML table. The API supports query-based searches, date range filtering, and result limits.
