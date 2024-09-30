@@ -1,14 +1,16 @@
 package com.recruiti.parser.service
 
-import com.recruiti.parser.data.asTable
+import com.recruiti.parser.data.Vacancy
 import com.recruiti.parser.data.createClient
 import com.recruiti.parser.domain.ParserRepository
 import com.recruiti.parser.service.DateRange.Companion.asDateRange
+import com.recruiti.project.table
 import io.ktor.http.ContentType
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
+import java.time.format.DateTimeFormatter
 
 fun Application.parser() {
     routing {
@@ -37,6 +39,30 @@ fun Application.parser() {
             } else {
                 call.respondText("Empty query", status = HttpStatusCode.BadRequest)
             }
+        }
+    }
+}
+
+fun List<Vacancy>.asTable(): String = table {
+    tr {
+        td { "POSITION" }
+        td { "COMPANY" }
+        td { "DESCRIPTION" }
+        td { "SALARY" }
+        td { "LINK" }
+        td { "DATE" }
+        td { "LOCATION" }
+    }
+
+    this@asTable.forEach { vacancy ->
+        tr {
+            td { vacancy.position }
+            td { vacancy.company }
+            td { vacancy.description }
+            td { vacancy.salary }
+            clickableTd(vacancy.link) { vacancy.link }
+            td { vacancy.dateParsed?.format(DateTimeFormatter.ofPattern("d-MM")) ?: vacancy.date }
+            td { vacancy.location }
         }
     }
 }
