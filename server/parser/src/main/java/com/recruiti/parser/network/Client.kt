@@ -1,4 +1,4 @@
-package com.recruiti.parser.data
+package com.recruiti.parser.network
 
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO

@@ -1,4 +1,4 @@
-package com.recruiti.project
+package com.recruiti.project.draw
 
 class HtmlTableBuilder {
     private val rows = mutableListOf<String>()

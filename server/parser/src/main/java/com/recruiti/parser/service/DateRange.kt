@@ -1,6 +1,6 @@
 package com.recruiti.parser.service
 
-import com.recruiti.parser.data.Vacancy
+import com.recruiti.project.data.Vacancy
 import java.time.LocalDate
 
 sealed class DateRange(val value: String) {
